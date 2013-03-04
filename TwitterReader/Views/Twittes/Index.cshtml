@@ -1,0 +1,35 @@
+﻿@model TwitterReader.Models.Twittes
+
+@{
+    ViewBag.Title = "User Twittes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User Twittes</h2>
+
+<h3>Screen Name : @Html.Raw(TwitterReader.Models.Twittes.UserProfile.screen_name)</h3>
+
+<a href="@Url.Action("StatisticsPage", "Twittes")" style="margin-left:45%;font-size:larger;font-weight:bolder">
+   Statistics Page
+</a>
+
+<table>
+  @foreach (var tweet in Model.Tweets)
+  {
+    <tr>
+      <td style="width:10%">
+          <img src="@tweet.user.profile_image_url" />
+      </td>
+      
+      <td style="width:70%">
+            <p title="@tweet.created_at">
+                 @Html.Raw(tweet.text)
+
+            </p>
+       </td>
+     <td style="width:20%">
+         @Html.Raw(tweet.created_at)
+     </td>
+    </tr>
+  }
+</table>

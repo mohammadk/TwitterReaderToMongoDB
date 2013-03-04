@@ -1,0 +1,13 @@
+﻿@model TwitterReader.Models.Twittes
+
+@{
+    ViewBag.Title = "Statistics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Statistics Page</h2>
+
+<h3>Number of friends : @Html.Raw(TwitterReader.Models.Twittes.UserProfile.friends_count)</h3>
+<h3>Number of Followers : @Html.Raw(TwitterReader.Models.Twittes.UserProfile.followers_count)</h3>
+<h3>Number of Tweets : @Html.Raw(TwitterReader.Models.Twittes.UserProfile.statuses_count)</h3>
+
