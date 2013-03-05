@@ -76,13 +76,6 @@ namespace TwitterReader.Controllers
                 Type = ParameterType.GetOrPost
             });
 
-            request.Parameters.Add(new Parameter()
-            {
-                Name = "include_entities",
-                Value = true,
-                Type = ParameterType.GetOrPost
-            });
-
             var response = client.Execute(request);
 
             model.Tweets =
